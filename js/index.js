@@ -4,4 +4,5 @@ $(document).ready(function () {
   console.log("Name:", name);
   $("#firstH2").text("Welcome, " + name + "...");
   console.log("Value:" + name);
+  localStorage.setItem("Name", name);
 });

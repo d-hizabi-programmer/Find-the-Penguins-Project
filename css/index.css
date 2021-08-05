@@ -15,22 +15,50 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
-#score {
+#name {
+  display: inline-block;
+  margin-right: 1em;
   width: 150px;
-  height: 70px;
-  position: absolute;
-  left: 75%;
-  border: 3px groove darkslategrey;
+  /* border: 3px groove darkslategrey; */
   text-align: center;
   font-family: Comic Sans MS;
   font-size: 1.5em;
   font-weight: 800;
   color: darkslategrey;
   text-shadow: 2px 2px lightgrey;
-  background-color: rgba(99, 54, 54, 0.1);
+  /* background-color: rgba(99, 54, 54, 0.1); */
 }
 
+#score {
+  display: inline-block;
+  margin-right: 1em;
+  width: 150px;
+  /* height: 70px; */
+  /* position: absolute; */
+  /* left: 75%; */
+  /* border: 3px groove darkslategrey; */
+  text-align: center;
+  font-family: Comic Sans MS;
+  font-size: 1.5em;
+  font-weight: 800;
+  color: darkslategrey;
+  text-shadow: 2px 2px lightgrey;
+  /* background-color: rgba(238, 168, 168, 0.1); */
+}
+
+#lives {
+  display: inline-block;
+  /* width: 150px; */
+  margin: 1em;
+  /* border: 3px groove darkslategrey; */
+  /* text-align: center; */
+  font-family: Comic Sans MS;
+  font-size: 1.5em;
+  font-weight: 800;
+  color: darkslategrey;
+  text-shadow: 2px 2px lightgrey;
+  /* background-color: rgba(99, 54, 54, 0.1); */
+}
 #penguin1:hover {
   background-image: url("/images/mound_1_hover.png");
   cursor: pointer;
