@@ -12,6 +12,8 @@ body {
   width: 600px;
   height: 130px;
   background-image: url("/images/penguin_title.png");
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #score {
@@ -145,4 +147,32 @@ body {
   height: 200px;
   float: left;
   background-image: url("/images/mound_9.png");
+}
+
+a {
+  text-decoration: none;
+  color: #ccf5f5;
+  font-size: larger;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+}
+
+button {
+  height: 50px;
+  width: 20%;
+  background: darkslategrey;
+}
+
+fieldset {
+  width: 80%;
+  /* margin-right: 2em; */
+  margin-left: auto;
+  margin-right: auto;
+  color: darkslategray;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+legend {
+  font-weight: bold;
 }
