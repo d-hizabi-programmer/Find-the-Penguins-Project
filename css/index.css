@@ -151,7 +151,6 @@ body {
 
 a {
   text-decoration: none;
-  color: #ccf5f5;
   font-size: larger;
   font-weight: bolder;
   letter-spacing: 0.1em;
@@ -161,6 +160,7 @@ button {
   height: 50px;
   width: 20%;
   background: darkslategrey;
+  color: #ccf5f5;
 }
 
 fieldset {
