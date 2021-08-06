@@ -2,7 +2,6 @@ var arr = [];
 var fileName = [];
 var arr = [];
 var score = 0;
-var highScore = [];
 //setting bg pictures!
 function setBgImage(num, image) {
   // console.log("iside set fun");
@@ -30,25 +29,34 @@ randomNumber = () => {
 };
 
 $(document).ready(function () {
-  var lives = 3;
+  // var lives = 3;
+  const soundLoad = new Audio("/sounds/loadMusic.wav");
+  soundLoad.play();
   $("#name").text(localStorage.getItem("Name"));
 
   randomNumber();
   for (let i = 1; i <= 9; i++) {
     $(`#penguin${i}`).click(() => {
       setBgImage(i, fileName[i - 1]);
+
+      // location.reload();
     });
     $(`#penguin${i}`).click(function () {
       if (fileName[i - 1] == "/images/penguin_9.png") {
+        const yetiFound = new Audio("/sounds/yetiFound.wav");
+        yetiFound.play();
         alert("Yeti Found...Game Over!");
         alert("Your Score is:" + score);
         score = 0;
-        location.reload();
+
+        // location.reload();
       } else {
+        const penguin = new Audio("/sounds/penguin.wav");
+        penguin.play();
         score += 1;
         $("#score").text("Score:" + score);
       }
-      highScore[highScore.length] = score;
+      // highScore[highScore.length] = score;
     });
   }
 });
