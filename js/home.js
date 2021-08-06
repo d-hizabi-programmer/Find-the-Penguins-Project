@@ -2,6 +2,7 @@ var arr = [];
 var fileName = [];
 var arr = [];
 var score = 0;
+var highScore = [];
 //setting bg pictures!
 function setBgImage(num, image) {
   // console.log("iside set fun");
@@ -23,40 +24,31 @@ randomNumber = () => {
       fileName.push("/images/penguin_" + r + ".png");
       number++;
     }
-    console.log("at the end:\n", fileName);
+    // console.log("at the end:\n", fileName);
   }
   // E:\Projects\Find-the-Penguins-Project\images\penguin_9.png
 };
 
 $(document).ready(function () {
   var lives = 3;
-  while (lives) {
-    $("#name").text(localStorage.getItem("Name"));
-    $("#lives").empty();
-    $("#lives").text("Lives:");
-    for (let i = 1; i <= lives; i++) {
-      var svg =
-        $(`<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-      <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
-    </svg>`);
-      svg.css("padding-top", "1em 0.2em 0em 0em");
-      $("#lives").append(svg);
-    }
+  $("#name").text(localStorage.getItem("Name"));
 
-    randomNumber();
-    for (let i = 1; i <= 9; i++) {
-      console.log(`#penguin${i}`);
-      $(`#penguin${i}`).click(() => {
-        // alert(fileName[i - 1]);
-        setBgImage(i, fileName[i - 1]);
-      });
-      if (fileName.indexOf("/images/penguin_9.png") == i) {
-        alert("Game Over!");
-        console.log("inside if");
-
-        break;
+  randomNumber();
+  for (let i = 1; i <= 9; i++) {
+    $(`#penguin${i}`).click(() => {
+      setBgImage(i, fileName[i - 1]);
+    });
+    $(`#penguin${i}`).click(function () {
+      if (fileName[i - 1] == "/images/penguin_9.png") {
+        alert("Yeti Found...Game Over!");
+        alert("Your Score is:" + score);
+        score = 0;
+        location.reload();
+      } else {
+        score += 1;
+        $("#score").text("Score:" + score);
       }
-    }
-    lives--;
+      highScore[highScore.length] = score;
+    });
   }
 });
